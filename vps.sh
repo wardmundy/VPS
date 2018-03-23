@@ -2,10 +2,10 @@
 set -e
 
 if [ -d "/etc/selinux" ]; then
-#Disable Selinux Temporarily
+#Disable Selinux Temporarily if installed
 setenforce 0
 
-#Disable SeLinux Permanently
+#Disable SeLinux Permanently if installed
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 fi
 
