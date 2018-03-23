@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
+if [ -d "/etc/selinux" ]; then
 #Disable Selinux Temporarily
-# not needed on Vultr and Digital Ocean
-# setenforce 0
+setenforce 0
 
 #Disable SeLinux Permanently
-# not needed on Vultr and Digital Ocean
-# sed -i 's/(^SELINUX=).*/SELINUX=disabled/' /etc/selinux/config
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+fi
 
 #Clean Yum Cache
 yum clean all
