@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 if [ -d "/etc/selinux" ]; then
 #Disable Selinux Temporarily if installed
